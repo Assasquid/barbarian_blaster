@@ -47,11 +47,12 @@ environment = SubResource("Environment_ob46b")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-size = Vector3(100, 2, 100)
+size = Vector3(110, 2, 110)
 material = SubResource("StandardMaterial3D_hi3xb")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 14.5, 9.5)
+fov = 80.0
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_qhsvv")
