@@ -26,3 +26,10 @@ mesh = SubResource("SphereMesh_ip4wp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_8h0dj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
