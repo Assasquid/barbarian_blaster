@@ -25,3 +25,6 @@ func _process(delta: float) -> void:
 					turret_manager.build_turret(tile_position)
 	else:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	
+	if Input.is_action_pressed("quit"):
+		get_tree().quit()

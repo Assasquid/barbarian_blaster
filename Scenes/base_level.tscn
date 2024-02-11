@@ -134,6 +134,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 0
 
 [node name="Base" parent="." instance=ExtResource("3_1mlrs")]
 
-[node name="TurretManager" type="Node3D" parent="."]
+[node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("5_qj1v3")
 turret = ExtResource("6_jg5wx")
+enemy_path = NodePath("../Path3D")
