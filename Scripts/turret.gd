@@ -8,6 +8,7 @@ var target: PathFollow3D
 
 @onready var right_barrel: MeshInstance3D = $TurretBase/TurretTop/Visor/RightBarrel
 @onready var left_barrel: MeshInstance3D = $TurretBase/TurretTop/Visor/LeftBarrel
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _physics_process(delta: float) -> void:
@@ -18,6 +19,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	if target:
+		animation_player.play("Fire")
+		
 		var shot_right = projectile.instantiate()
 		add_child(shot_right)
 		shot_right.global_position = right_barrel.global_position
