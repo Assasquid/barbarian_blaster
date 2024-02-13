@@ -1,8 +1,7 @@
 extends Path3D
 
 @export var enemy_scene: PackedScene
-@export var timer_min := 1.6
-@export var timer_max := 2.8
+@export var difficulty_manager: Node
 
 @onready var timer: Timer = $Timer
 
@@ -26,4 +25,6 @@ func spawn_enemy() -> void:
 
 
 func generate_random_duration():
+	var timer_min = difficulty_manager.get_spawn_time_min()
+	var timer_max = difficulty_manager.get_spawn_time_max()
 	random_duration = randf_range(timer_min, timer_max)

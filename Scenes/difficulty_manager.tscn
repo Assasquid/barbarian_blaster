@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c260wuv1p25l7"]
+
+[ext_resource type="Script" path="res://Scripts/difficulty_manager.gd" id="1_wdvpx"]
+
+[sub_resource type="Curve" id="Curve_d145o"]
+min_value = 0.4
+max_value = 1.8
+_data = [Vector2(0, 1.8), 0.0, -1.4, 0, 1, Vector2(1, 0.4), -1.4, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ad73l"]
+min_value = 0.75
+max_value = 2.4
+_data = [Vector2(0, 2.4), 0.0, -1.65, 0, 1, Vector2(1, 0.75), -1.65, 0.0, 1, 0]
+point_count = 2
+
+[node name="DifficultyManager" type="Node"]
+script = ExtResource("1_wdvpx")
+spawn_time_min_curve = SubResource("Curve_d145o")
+spawn_time_max_curve = SubResource("Curve_ad73l")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
