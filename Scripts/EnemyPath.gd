@@ -18,12 +18,12 @@ func _ready() -> void:
 
 func _on_timer_timeout() -> void:
 	spawn_enemy()
-	print("Spawning enemy: " + str(enemy_number_debug))
+	print("Spawning enemy: " + str(enemy_number_debug) + " after having waited: " + str(random_duration))
 	generate_random_duration()
 	timer.wait_time = random_duration
 	timer.start()
-	print("Next enemy in: " + str(random_duration))
 	enemy_number_debug += 1
+	print("Next enemy (enemy " + str(enemy_number_debug) + ") in: " + str(random_duration))
 
 func spawn_enemy() -> void:
 	var new_enemy = enemy_scene.instantiate()
