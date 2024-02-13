@@ -21,6 +21,7 @@ height = 0.5
 
 [sub_resource type="Animation" id="Animation_bjjph"]
 resource_name = "Fire"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
