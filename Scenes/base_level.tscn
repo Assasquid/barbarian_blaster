@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bn12kcsx877x"]
+[gd_scene load_steps=18 format=3 uid="uid://bn12kcsx877x"]
 
 [ext_resource type="PackedScene" uid="uid://cu68owmkekb1q" path="res://Scenes/ray_picker_camera.tscn" id="1_4ckf2"]
 [ext_resource type="MeshLibrary" uid="uid://ridxlenkhg7l" path="res://MeshLibraries/space_library.tres" id="1_qhsvv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/EnemyPath.gd" id="3_s3yrn"]
 [ext_resource type="Script" path="res://Scripts/turret_manager.gd" id="5_qj1v3"]
 [ext_resource type="PackedScene" uid="uid://brwaqwe0c6u0d" path="res://Scenes/turret.tscn" id="6_jg5wx"]
+[ext_resource type="Script" path="res://Scripts/Bank.gd" id="8_nnd8n"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_timms"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,6 +40,15 @@ albedo_color = Color(0.415686, 0.25098, 0.113725, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mk6a"]
 albedo_color = Color(0.415686, 0.25098, 0.113725, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1yxe1"]
+font_size = 64
+font_color = Color(0.909804, 0.913725, 0.788235, 1)
+outline_size = 16
+outline_color = Color(0.243137, 0.243137, 0.235294, 1)
+shadow_size = 10
+shadow_color = Color(0.133333, 0.552941, 0.341176, 1)
+shadow_offset = Vector2(4, 4)
 
 [node name="BaseLevel" type="Node3D"]
 
@@ -118,7 +128,6 @@ material = SubResource("StandardMaterial3D_iy61t")
 
 [node name="Timer" type="Timer" parent="EnemyPath"]
 wait_time = 2.0
-autostart = true
 
 [node name="Base" parent="." instance=ExtResource("3_1mlrs")]
 
@@ -126,3 +135,24 @@ autostart = true
 script = ExtResource("5_qj1v3")
 turret = ExtResource("6_jg5wx")
 enemy_path = NodePath("../EnemyPath")
+
+[node name="Bank" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("8_nnd8n")
+
+[node name="Label" type="Label" parent="Bank"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "MONEY: 42000000"
+label_settings = SubResource("LabelSettings_1yxe1")
+vertical_alignment = 1
