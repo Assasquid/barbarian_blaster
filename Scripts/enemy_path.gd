@@ -8,7 +8,6 @@ extends Path3D
 var random_duration
 
 func _ready() -> void:
-	print(timer.wait_time)
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
@@ -21,10 +20,16 @@ func _on_timer_timeout() -> void:
 
 func spawn_enemy() -> void:
 	var new_enemy = enemy_scene.instantiate()
+	new_enemy.max_health = difficulty_manager.get_enemy_health()
 	add_child(new_enemy)
+	print(new_enemy.current_health)
 
 
 func generate_random_duration():
 	var timer_min = difficulty_manager.get_spawn_time_min()
 	var timer_max = difficulty_manager.get_spawn_time_max()
 	random_duration = randf_range(timer_min, timer_max)
+
+
+func _on_difficulty_manager_stop_spawning_enemies() -> void:
+	timer.stop()

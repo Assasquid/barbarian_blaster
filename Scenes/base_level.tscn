@@ -4,10 +4,10 @@
 [ext_resource type="MeshLibrary" uid="uid://ridxlenkhg7l" path="res://MeshLibraries/space_library.tres" id="1_qhsvv"]
 [ext_resource type="PackedScene" uid="uid://dx14yj8xnem7j" path="res://Scenes/enemy.tscn" id="2_i273a"]
 [ext_resource type="PackedScene" uid="uid://c45xr63uqvc0c" path="res://Scenes/base.tscn" id="3_1mlrs"]
-[ext_resource type="Script" path="res://Scripts/EnemyPath.gd" id="3_s3yrn"]
+[ext_resource type="Script" path="res://Scripts/enemy_path.gd" id="3_s3yrn"]
 [ext_resource type="Script" path="res://Scripts/turret_manager.gd" id="5_qj1v3"]
 [ext_resource type="PackedScene" uid="uid://brwaqwe0c6u0d" path="res://Scenes/turret.tscn" id="6_jg5wx"]
-[ext_resource type="Script" path="res://Scripts/Bank.gd" id="8_nnd8n"]
+[ext_resource type="Script" path="res://Scripts/bank.gd" id="8_nnd8n"]
 [ext_resource type="PackedScene" uid="uid://c260wuv1p25l7" path="res://Scenes/difficulty_manager.tscn" id="9_2df6k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_timms"]
@@ -160,3 +160,5 @@ label_settings = SubResource("LabelSettings_1yxe1")
 vertical_alignment = 1
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_2df6k")]
+
+[connection signal="stop_spawning_enemies" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemies"]

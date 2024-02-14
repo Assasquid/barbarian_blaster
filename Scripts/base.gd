@@ -5,7 +5,6 @@ extends Node3D
 var current_health: int:
 	set(health_in):
 		current_health = health_in
-		print("Health was changed.")
 		label_3d.text = str(current_health) + "/" + str(max_health)
 		
 		var red: Color = Color.RED
@@ -24,5 +23,4 @@ func _ready()-> void:
 
 
 func take_damage()-> void:
-	print("Damage dealt to base!")
 	current_health -= 1
