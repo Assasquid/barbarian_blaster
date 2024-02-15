@@ -1,23 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://brwaqwe0c6u0d"]
+[gd_scene load_steps=8 format=3 uid="uid://brwaqwe0c6u0d"]
 
 [ext_resource type="Script" path="res://Scripts/turret.gd" id="1_2lmvn"]
 [ext_resource type="PackedScene" uid="uid://8uair5ody1mx" path="res://Scenes/projectile.tscn" id="1_e2q7y"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_mw1wt"]
-height = 1.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_yyw1f"]
-top_radius = 0.6
-bottom_radius = 0.6
-height = 0.6
-
-[sub_resource type="BoxMesh" id="BoxMesh_v1wrl"]
-size = Vector3(0.8, 0.4, 0.5)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_o3xuy"]
-top_radius = 0.2
-bottom_radius = 0.2
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://nfgluav5xliy" path="res://Assets/Cannon.glb" id="3_s8ltr"]
+[ext_resource type="PackedScene" uid="uid://baltu4scolqgr" path="res://Assets/TurretBase.glb" id="4_1g22s"]
 
 [sub_resource type="Animation" id="Animation_bjjph"]
 resource_name = "Fire"
@@ -25,70 +11,22 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TurretBase/TurretTop/Visor:position")
+tracks/0/path = NodePath("TurretBase/TurretTop:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.4), Vector3(0, 0, 0.5)]
+"values": [Vector3(0, 0.3, -0.4), Vector3(0, 0.3, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TurretBase/TurretTop/Visor:scale")
+tracks/1/path = NodePath("TurretBase/TurretTop:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TurretBase/TurretTop/Visor/RightBarrel:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.18, 0.1, 0), Vector3(-0.18, 0.4, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TurretBase/TurretTop/Visor/RightBarrel:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TurretBase/TurretTop/Visor/LeftBarrel:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.18, 0.1, 0), Vector3(0.18, 0.4, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TurretBase/TurretTop/Visor/LeftBarrel:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -100,70 +38,22 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TurretBase/TurretTop/Visor:position")
+tracks/0/path = NodePath("TurretBase/TurretTop:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0.5)]
+"values": [Vector3(0, 0.3, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TurretBase/TurretTop/Visor:scale")
+tracks/1/path = NodePath("TurretBase/TurretTop:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TurretBase/TurretTop/Visor/RightBarrel:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.18, 0.4, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TurretBase/TurretTop/Visor/RightBarrel:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TurretBase/TurretTop/Visor/LeftBarrel:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.18, 0.4, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("TurretBase/TurretTop/Visor/LeftBarrel:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -180,28 +70,17 @@ _data = {
 script = ExtResource("1_2lmvn")
 projectile = ExtResource("1_e2q7y")
 
-[node name="TurretBase" type="MeshInstance3D" parent="."]
+[node name="TurretBase" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("CylinderMesh_mw1wt")
 
-[node name="TurretTop" type="MeshInstance3D" parent="TurretBase"]
+[node name="TurretTop" type="Node3D" parent="TurretBase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-mesh = SubResource("CylinderMesh_yyw1f")
-skeleton = NodePath("../..")
 
-[node name="Visor" type="MeshInstance3D" parent="TurretBase/TurretTop"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
-mesh = SubResource("BoxMesh_v1wrl")
+[node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_s8ltr")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.26, 0)
 
-[node name="RightBarrel" type="MeshInstance3D" parent="TurretBase/TurretTop/Visor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.4, 0)
-mesh = SubResource("CylinderMesh_o3xuy")
-skeleton = NodePath("../../..")
-
-[node name="LeftBarrel" type="MeshInstance3D" parent="TurretBase/TurretTop/Visor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.4, 0)
-mesh = SubResource("CylinderMesh_o3xuy")
-skeleton = NodePath("../../..")
+[node name="Muzzle" type="Node3D" parent="TurretBase/TurretTop/Cannon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81, 0.81)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -210,5 +89,7 @@ autostart = true
 libraries = {
 "": SubResource("AnimationLibrary_h7qxw")
 }
+
+[node name="TurretBase2" parent="." instance=ExtResource("4_1g22s")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

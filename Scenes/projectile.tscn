@@ -14,9 +14,8 @@ material = SubResource("StandardMaterial3D_rtfkg")
 radius = 0.18
 height = 0.36
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_suaad"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_sn3s1"]
 radius = 0.18
-height = 0.72
 
 [node name="Projectile" type="Area3D"]
 top_level = true
@@ -24,17 +23,12 @@ collision_layer = 16
 collision_mask = 8
 script = ExtResource("1_xqu3r")
 
-[node name="LeftProjectile" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0, 0)
-mesh = SubResource("SphereMesh_ip4wp")
-
-[node name="RightProjectile" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0, 0)
+[node name="RoundShot" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_ip4wp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_suaad")
+shape = SubResource("SphereShape3D_sn3s1")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
