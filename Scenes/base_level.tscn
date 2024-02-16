@@ -67,7 +67,6 @@ size = Vector3(110, 2, 110)
 material = SubResource("StandardMaterial3D_hi3xb")
 
 [node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap", "turret_manager") instance=ExtResource("1_4ckf2")]
-fov = 83.0
 gridmap = NodePath("../GridMap")
 turret_manager = NodePath("../TurretManager")
 
