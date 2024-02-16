@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var engine_time_scale = 3
 @export var max_health: int = 5
 
 var current_health: int:
@@ -20,6 +21,7 @@ var current_health: int:
 
 func _ready()-> void:
 	current_health = max_health
+	Engine.time_scale = engine_time_scale
 
 
 func take_damage()-> void:

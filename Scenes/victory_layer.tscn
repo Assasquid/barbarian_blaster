@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg11jdjus7is3"]
+[gd_scene load_steps=6 format=3 uid="uid://cg11jdjus7is3"]
 
 [ext_resource type="Script" path="res://Scripts/victory_layer.gd" id="1_a8hba"]
 [ext_resource type="Texture2D" uid="uid://b4p3u2m7n2tyd" path="res://Assets/star.png" id="2_ks40n"]
+[ext_resource type="FontFile" uid="uid://dwn3lv6ii7cag" path="res://Assets/LobsterTwo-Regular.ttf" id="2_lxump"]
+
+[sub_resource type="Theme" id="Theme_2etc5"]
+default_font = ExtResource("2_lxump")
 
 [sub_resource type="LabelSettings" id="LabelSettings_id03v"]
 font_size = 80
@@ -23,6 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_2etc5")
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 custom_minimum_size = Vector2(400, 400)
@@ -94,6 +99,7 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 
 [node name="RetryButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

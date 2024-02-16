@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var money_goal := 210
+@export var money_goal := 1900
 
 @onready var star_1: TextureRect = %Star1
 @onready var star_2: TextureRect = %Star2
